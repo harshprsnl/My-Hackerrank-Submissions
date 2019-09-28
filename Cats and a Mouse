@@ -1,0 +1,40 @@
+# https://www.hackerrank.com/challenges/cats-and-a-mouse/
+# Author : Harsh Babu
+# Date : April 2019
+ #!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def catAndMouse(x, y, z):
+    while(1):
+        if x==z and y==z:return "Mouse C"
+        if x==z:return "Cat A"
+        if y==z:return "Cat B"
+        if x>z:x-=1
+        else:x+=1
+        if y>z:y-=1
+        else:y+=1 
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        xyz = input().split()
+
+        x = int(xyz[0])
+
+        y = int(xyz[1])
+
+        z = int(xyz[2])
+
+        result = catAndMouse(x, y, z)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
