@@ -1,0 +1,46 @@
+# https://www.hackerrank.com/challenges/apple-and-orange/
+# Author : Harsh Babu
+# Date : March 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    ap=orr=0
+    for x in range(len(apples)):
+        apples[x]+=a
+        if apples[x]>=s and apples[x]<=t:ap+=1
+    for x in range(len(oranges)):
+        oranges[x]+=b
+        if oranges[x]>=s and oranges[x]<=t:orr+=1
+    print(ap)
+    print(orr)        
+
+if __name__ == '__main__':
+    st = input().split()
+
+    s = int(st[0])
+
+    t = int(st[1])
+
+    ab = input().split()
+
+    a = int(ab[0])
+
+    b = int(ab[1])
+
+    mn = input().split()
+
+    m = int(mn[0])
+
+    n = int(mn[1])
+
+    apples = list(map(int, input().rstrip().split()))
+
+    oranges = list(map(int, input().rstrip().split()))
+
+    countApplesAndOranges(s, t, a, b, apples, oranges)
