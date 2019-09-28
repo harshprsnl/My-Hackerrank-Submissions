@@ -1,0 +1,39 @@
+# https://www.hackerrank.com/challenges/diagonal-difference/
+# Author : Harsh Babu
+# Date : March 2019
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def diagonalDifference(arr):
+    r=l=0
+    y=len(arr)-1
+
+    for x in range(len(arr)):
+        r+=arr[x][x]
+    for x in range(len(arr)):
+       l+=arr[x][x+y]
+       y-=2
+    return abs(r-l)               
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
