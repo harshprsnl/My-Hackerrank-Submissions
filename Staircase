@@ -1,0 +1,24 @@
+# https://www.hackerrank.com/challenges/staircase/
+# Author : Harsh Babu
+# Date : March 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+def staircase(n):
+    for x in range(n):
+        for y in range(n-x-1):
+            print(" ", end ="")
+        for i in range(x+1):
+            print("#", end ="")
+        print("")
+        
+if __name__ == '__main__':
+    n = int(input())
+
+    staircase(n)
