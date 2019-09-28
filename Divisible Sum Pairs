@@ -1,0 +1,37 @@
+# https://www.hackerrank.com/challenges/divisible-sum-pairs/
+# Author : Harsh Babu
+# Date : March 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def divisibleSumPairs(n, k, ar):
+    sm=count=0
+    for i in range(n-1):
+        for j in range(i+1,n):
+            sm=ar[i]+ar[j]
+            if sm%k==0: count+=1
+    return count        
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = divisibleSumPairs(n, k, ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
