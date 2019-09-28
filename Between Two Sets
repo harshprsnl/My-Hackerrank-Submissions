@@ -1,0 +1,46 @@
+# https://www.hackerrank.com/challenges/between-two-sets/
+# Author : Harsh Babu
+# Date : March 2019
+#!/bin/python3
+
+import os
+import sys
+
+def getTotalX(a, b):
+        flag=flg=count=0
+        a.sort()
+        b.sort()
+        for x in range(a[-1],b[0]+1):
+            flag=flg=0
+            for y in a:
+                if x%y!=0:
+                    flag=1
+                    break
+            if flag==0:
+                for z in b:
+                    if z%x!=0:
+                        flg=1
+                        break
+                if flg==0:
+                    count+=1
+        return count                               
+        
+
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    a = list(map(int, input().rstrip().split()))
+
+    b = list(map(int, input().rstrip().split()))
+
+    total = getTotalX(a, b)
+
+    f.write(str(total) + '\n')
+
+    f.close()
