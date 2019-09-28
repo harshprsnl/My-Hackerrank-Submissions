@@ -1,0 +1,38 @@
+# https://www.hackerrank.com/challenges/counting-valleys/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def countingValleys(n, s):
+    ucount=dcount=count=0
+    for x in s:
+            
+            if x=="D":
+                if dcount==ucount:
+                    count+=1
+                dcount+=1    
+
+            if x=="U":ucount+=1
+    return count
+
+
+            
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    s = input()
+
+    result = countingValleys(n, s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
