@@ -1,0 +1,48 @@
+# https://www.hackerrank.com/challenges/electronics-shop/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import os
+import sys
+
+def getMoneySpent(key, dri, b):
+    key.sort()
+    dri.sort()
+    mx=0
+    if key[0]+dri[0]>b:return -1
+    for x in key:
+        if x+dri[0]>b:
+            break  
+        for y in dri:
+            if x+y<=b: 
+                if x+y>mx:mx=x+y
+                if mx==b:return mx
+            else: break
+    return mx        
+          
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    bnm = input().split()
+
+    b = int(bnm[0])
+
+    n = int(bnm[1])
+
+    m = int(bnm[2])
+
+    key = list(map(int, input().rstrip().split()))
+
+    dri = list(map(int, input().rstrip().split()))
+
+    #
+    # The maximum amount of money she can spend on a keyboard and USB drive, or -1 if she can't purchase both items
+    #
+
+    moneySpent = getMoneySpent(key, dri, b)
+
+    fptr.write(str(moneySpent) + '\n')
+
+    fptr.close()
