@@ -1,0 +1,30 @@
+# https://www.hackerrank.com/challenges/designer-pdf-viewer/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def designerPdfViewer(h, word):
+    mx=0
+    for x in range(len(word)):
+        p=h[ord(word[x])-97]
+        if mx<p:mx=p
+    return mx*len(word)
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    h = list(map(int, input().rstrip().split()))
+
+    word = input()
+
+    result = designerPdfViewer(h, word)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
