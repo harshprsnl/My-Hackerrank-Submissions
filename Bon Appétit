@@ -1,0 +1,31 @@
+# https://www.hackerrank.com/challenges/bon-appetit/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def bonAppetit(bill, k, b):
+    amount=(sum(bill)-bill[k])//2
+    if b==amount:
+        print("Bon Appetit")
+    else:
+        print(b-amount)    
+
+
+if __name__ == '__main__':
+    nk = input().rstrip().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    bill = list(map(int, input().rstrip().split()))
+
+    b = int(input().strip())
+
+    bonAppetit(bill, k, b)
