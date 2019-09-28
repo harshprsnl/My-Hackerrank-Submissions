@@ -1,0 +1,41 @@
+# https://www.hackerrank.com/challenges/drawing-book/
+# Author : Harsh Babu
+# Date : March 2019
+#!/bin/python3
+
+import os
+import sys
+
+def pageCount(n, p):
+    fcount=bcount=1
+    if p==1 or p==n:return 0
+    if n%2!=0 and p==n-1:return 0
+    if p<=n//2:
+        for x in range(2,n,2):
+            if x==p or p==x+1:break
+            fcount+=1
+        return fcount    
+    elif n%2==0:        
+        for x in range(n-1,1,-2):
+            if x==p or p==x-1:break
+            bcount+=1
+        return bcount
+    else:
+        for x in range(n-2,1,-2):
+            if x==p or p==x-1:break
+            bcount+=1
+        return bcount
+          
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    p = int(input())
+
+    result = pageCount(n, p)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
