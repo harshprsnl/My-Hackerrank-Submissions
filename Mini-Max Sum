@@ -1,0 +1,22 @@
+# https://www.hackerrank.com/challenges/mini-max-sum/
+# Author : Harsh Babu
+# Date : March 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def miniMaxSum(arr):
+    min=max=0
+    arr.sort()
+    for x in range(1,len(arr)):
+        max+=arr[x]
+    for x in range(0,len(arr)-1):
+        min+=arr[x]  
+    print(min,max)      
+
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
