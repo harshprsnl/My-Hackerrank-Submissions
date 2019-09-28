@@ -1,0 +1,38 @@
+# https://www.hackerrank.com/challenges/sock-merchant/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def sockMerchant(n, ar):
+    sm=0
+    count=1
+    for x in range(len(ar)-1):
+        for y in range(x+1,len(ar)):
+            if ar[x]==ar[y] and ar[x]!=0:
+                count+=1
+                ar[y]=0
+
+
+        if count>=2:
+            sm+=count//2
+            count=1
+    return sm
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = sockMerchant(n, ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
