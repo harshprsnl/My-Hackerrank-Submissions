@@ -1,0 +1,41 @@
+# https://www.hackerrank.com/challenges/cut-the-sticks/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def cutTheSticks(arr):
+    array=[len(arr)]
+    while len(arr)>1:
+        arr.sort()
+        x=1
+        p=len(arr)
+        while x<p:
+            arr[x]=arr[x]-arr[0]
+            if arr[x]==0:arr.pop(x)
+            else:x+=1
+            p=len(arr)
+        arr.pop(0)
+        if len(arr)!=0:array.append(len(arr))
+    return array        
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = cutTheSticks(arr)
+
+    fptr.write('\n'.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
