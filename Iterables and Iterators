@@ -1,0 +1,17 @@
+# https://www.hackerrank.com/challenges/iterables-and-iterators/
+# Author : Harsh Babu
+# Date : May 2019
+
+
+import math
+n=int(input())
+lst=list(input().split())
+k=int(input())
+c=0
+for x in lst:
+    if x=='a':c+=1
+t=math.factorial(n)/(math.factorial(k)*math.factorial(n-k))
+if n-c>=k:s=math.factorial(n-c)/(math.factorial(k)*math.factorial(n-k-c))
+else:s=0
+print((t-s)/t)
+
