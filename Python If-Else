@@ -1,0 +1,12 @@
+# https://www.hackerrank.com/challenges/py-if-else/s
+# Author : Harsh Babu
+# Date : August 2019
+
+#!/bin/python3
+
+N = int(input())
+if N%2!=0:
+    print("Weird")
+elif N%2==0:
+    if N<6 or N>20:print("Not Weird") 
+    elif N<21:print("Weird") 
