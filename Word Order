@@ -1,0 +1,14 @@
+# https://www.hackerrank.com/challenges/word-order/
+# Author : Harsh Babu
+# Date : August 2019
+
+dst=[]
+dc=dict()
+c=0
+for _ in range(int(input())):
+    t=input()
+    if t not in dc:dc[t]=0
+    dc[t]+=1
+print(len(dc))
+for x in dc:
+    print(dc[x],end=" ")
