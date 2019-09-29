@@ -1,0 +1,35 @@
+# https://www.hackerrank.com/challenges/utopian-tree/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def utopianTree(n):
+    
+    life=1
+    if n>0:
+        for y in range(1,n+1):
+            if y%2==0:life+=1
+            else:life*=2
+    return life        
+ 
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        n = int(input())
+
+        result = utopianTree(n)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
