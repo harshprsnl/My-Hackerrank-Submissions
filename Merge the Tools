@@ -1,0 +1,17 @@
+# https://www.hackerrank.com/challenges/merge-the-tools/
+# Author : Harsh Babu
+# Date : August 2019
+
+def merge_the_tools(st, k):
+    p=len(st)//k
+    p=len(st)//p
+    t=""
+    pt=[]
+    for i in range(len(st)):
+        if st[i] not in t:
+            t+=st[i]
+        if (i+1)%p==0:
+            pt.append(t)
+            t=""
+    for j in pt:
+        print(j)                
