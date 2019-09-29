@@ -1,0 +1,8 @@
+# https://www.hackerrank.com/challenges/python-loops/
+# Author : Harsh Babu
+# Date : August 2019
+
+if __name__ == '__main__':
+    n = int(input())
+    for x in range(n):
+        print(x**2)
