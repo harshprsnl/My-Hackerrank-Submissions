@@ -1,0 +1,14 @@
+# https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/
+# Author : Harsh Babu
+# Date : August 2019
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    mx=max(arr)
+    tmp=min(arr)
+    for x in arr:
+        if tmp<x and x<mx:
+            tmp=x  
+
+print(tmp)
