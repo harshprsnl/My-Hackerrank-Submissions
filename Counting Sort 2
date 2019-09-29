@@ -1,0 +1,32 @@
+# https://www.hackerrank.com/challenges/countingsort2/
+# Author : Harsh Babu
+# Date : August 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def countingSort(arr):
+    arr.sort()
+    pt=""
+    for x in arr:
+        pt+=str(x)+" "
+
+
+    return pt
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = countingSort(arr)
+
+    fptr.write(result)
+    fptr.write('\n')
+
+    fptr.close()
