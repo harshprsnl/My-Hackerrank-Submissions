@@ -1,0 +1,46 @@
+# https://www.hackerrank.com/challenges/append-and-delete/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def appendAndDelete(s, t, k):
+    count=1
+    if t[0]!=s[0]:
+        if len(s)+len(t)<=k:return "Yes"
+        else:return "No"
+    elif s in t:
+        if len(t)-len(s)<=k:
+            if len(t)+len(s)<=k:
+                return "Yes"
+            elif (k-(len(t)-len(s)))%2==0:
+                return "Yes"
+            else: "No"      
+        else:return "No"   
+    else:
+        for x in range(1,len(t)):
+            if t[x]!=s[x]:break
+            else:count+=1
+        if len(s)+len(t)-(2*count)<=k:return "Yes"
+        else:return "No" 
+    return "No"           
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    t = input()
+
+    k = int(input())
+
+    result = appendAndDelete(s, t, k)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
