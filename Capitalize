@@ -1,0 +1,9 @@
+# https://www.hackerrank.com/challenges/capitalize/
+# Author : Harsh Babu
+# Date : August 2019
+
+def solve(s):
+    for x in s[:].split():
+        s = s.replace(x, x.capitalize())
+    return s    
+    
