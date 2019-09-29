@@ -1,0 +1,43 @@
+# https://www.hackerrank.com/challenges/happy-ladybugs/
+# Author : Harsh Babu
+# Date : August 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def happyLadybugs(b):
+    b=list(b)
+    if "_" in b:b.sort()
+    b="".join(b)
+    temp=""
+    c=0    
+    for i in range(len(b)):
+        if temp==b[i] and b[i]!="_":c+=1
+        elif c==1 and b[i-1]!="_":return "NO"
+        else:
+            temp=b[i]
+            c=1
+    if c==1 and b[len(b)-1]!="_":return "NO"        
+    return "YES"    
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    g = int(input())
+
+    for g_itr in range(g):
+        n = int(input())
+
+        b = input()
+
+        result = happyLadybugs(b)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
