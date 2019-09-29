@@ -1,0 +1,18 @@
+# https://www.hackerrank.com/challenges/the-minion-game/
+# Author : Harsh Babu
+# Date : August 2019
+
+def minion_game(st):
+    v=0
+    c=0
+    for x in range(len(st)):
+        if st[x]=="A" or  st[x]=="E" or  st[x]=="I" or  st[x]=="O" or st[x]=="U":
+            v+=len(st)-x
+        else:c+=len(st)-x
+    if v>c:
+        print("Kevin ",end="")
+        print(v)
+    elif c>v:
+        print("Stuart ",end="")
+        print(c)
+    else:print("Draw")   
