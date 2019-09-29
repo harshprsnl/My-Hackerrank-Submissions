@@ -1,0 +1,29 @@
+# https://www.hackerrank.com/challenges/nested-list/
+# Author : Harsh Babu
+# Date : August 2019
+
+if __name__ == '__main__':
+    name=[]
+    score=[]
+    for _ in range(int(input())):
+        name.append(input())
+        score.append(float(input()))
+    copy=score.copy()
+    copy.sort()
+    temp=copy[0]
+    for x in copy:
+        if x!=temp:
+            temp=x
+            break
+    
+    newlst=[]
+    z=score.index(temp)
+    count=0
+    for y in score:
+        if temp==y:count=count+1
+
+    for i in range(z,z+count):
+        newlst.append(name[i])
+    newlst.sort()
+    for x in newlst:
+        print(x)    
