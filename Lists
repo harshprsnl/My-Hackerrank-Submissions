@@ -1,0 +1,22 @@
+# https://www.hackerrank.com/challenges/python-lists/
+# Author : Harsh Babu
+# Date : August 2019
+
+if __name__ == '__main__':
+    task=[]
+    tsk=[]
+    N = int(input())
+    for _ in range(N):
+        task.append(list(input().split()))
+    for x in range(N):
+        p=task[x][0]
+    
+        if p=='insert':tsk.insert(int(task[x][1]),int(task[x][2]))
+                            
+        elif p=="print" :print(tsk)
+        elif p=="remove":tsk.remove(int(task[x][1]))
+        elif p=="append":tsk.append(int(task[x][1]))
+        elif p=="sort":tsk.sort()
+        elif p=="pop":tsk.pop()
+        elif p=="reverse":tsk.reverse()
+
