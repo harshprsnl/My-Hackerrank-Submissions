@@ -1,0 +1,21 @@
+# https://www.hackerrank.com/challenges/extra-long-factorials/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def extraLongFactorials(n):
+    if n>1 : return n*extraLongFactorials(n-1)
+    else:return 1
+
+
+if __name__ == '__main__':
+    n = int(input())
+
+    re=extraLongFactorials(n)
+    print(re)
