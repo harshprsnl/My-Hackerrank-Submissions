@@ -1,0 +1,26 @@
+# https://www.hackerrank.com/challenges/piling-up/
+# Author : Harsh Babu
+# Date : May 2019
+
+i=int(input())
+for _ in range(i):
+    n=int(input())
+    lst=list(map(int,input().split()))
+    i=0
+    c=0
+    if lst[0]>lst[-1]:temp=lst[0]
+    else:temp=lst[-1]
+    j=len(lst)-1
+    while j-i!=0:
+        if lst[i]>lst[j] and lst[i]<=temp:
+            i+=1
+            temp=lst[i-1]
+        elif lst[j]<=temp:
+            temp=lst[j]
+            j-=1
+        else:
+            print("No")
+            c=1
+            break
+    if c==0:print("Yes")        
+
