@@ -1,0 +1,34 @@
+# https://www.hackerrank.com/challenges/equality-in-a-array/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def equalizeArray(arr):
+    freq = {} 
+    for item in arr: 
+        if (item in freq): 
+            freq[item] += 1
+        else: 
+            freq[item] = 1
+    mx=max(freq.values())
+    return len(arr)-mx         
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = equalizeArray(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
