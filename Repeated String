@@ -1,0 +1,35 @@
+# https://www.hackerrank.com/challenges/repeated-string/
+# Author : Harsh Babu
+# Date : April 2019
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def repeatedString(s, n):
+    p=len(s)
+    i=n//p
+    j=n%p
+    count=0
+    temp=0
+    for x in range(len(s)):
+        if x==j:temp=count
+        if s[x]=='a':count+=1
+        
+    return (count*i)+temp
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    n = int(input())
+
+    result = repeatedString(s, n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
