@@ -1,0 +1,14 @@
+# https://www.hackerrank.com/challenges/no-idea/
+# Author : Harsh Babu
+# Date : August 2019
+
+n,m=map(int,input().split())
+pt=list(map(int,input().split()))
+a=set(map(int,input().split()))
+b=set(map(int,input().split()))
+h=0
+for i in pt:
+    h+=(i in a)-(i in b)
+print(h)    
+
+   
